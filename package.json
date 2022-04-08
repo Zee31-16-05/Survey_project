@@ -1,0 +1,26 @@
+{
+  "name": "survey_typescript_2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc --watch",
+    "build": "tsc -p",
+    "dev": "nodemon dist/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/helmet": "^4.0.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^17.0.23"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "server": "^1.0.37"
+  }
+}
