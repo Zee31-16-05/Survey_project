@@ -9,7 +9,6 @@ app.use(express.json())
 
 app.use('/customer',CustomerRoute.router)
 
-
 mongoose.connect(URL)
 .then(()=> console.log("Successfully connected to the database"))
 .catch(()=> console.log("Failed connection to the database"))
