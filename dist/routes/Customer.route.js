@@ -25,8 +25,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = __importDefault(require("express"));
 const CustomerController = __importStar(require("../controllers/Customer.controller"));
+const signUp_middleware = __importStar(require("../middleware/middleware"));
 var router = express_1.default.Router();
 exports.router = router;
-router.post('/', function (req, res) {
+router.post('/', signUp_middleware.signUpMiddleware, function (req, res) {
     return CustomerController.createCustomerHandler(req, res);
+});
+// router.get('/',function(req:Request, res:Response){
+//     return CustomerController.getCustomerHandler(req, res);
+// })
+router.get('/', CustomerController.getCustomerHandler);
+router.get('/num/mobile', function (req, res) {
+    return CustomerController.loginHandler(req, res);
+});
+router.delete('/:id', function (req, res) {
+    return CustomerController.deleteCustomerHandler(req, res);
+});
+router.put('/:id', function (req, res) {
+    return CustomerController.updateCustomerHandler(req, res);
+});
+router.get('/:id', function (req, res) {
+    return CustomerController.getbyIdCustomer(req, res);
 });

@@ -25,12 +25,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const CustomerRoute = __importStar(require("./routes/Customer.route"));
+const QuestionRoute = __importStar(require("./routes/Question.route"));
+const AnswerRoute = __importStar(require("./routes/Answer.route"));
 const app = (0, express_1.default)();
 const PORT = 8081;
 const Hostname = 'localhost';
 const URL = `mongodb://${Hostname}:27017/survey_submission`;
 app.use(express_1.default.json());
 app.use('/customer', CustomerRoute.router);
+app.use('/question', QuestionRoute.router);
+app.use('/answer', AnswerRoute.router);
 mongoose_1.default.connect(URL)
     .then(() => console.log("Successfully connected to the database"))
     .catch(() => console.log("Failed connection to the database"));

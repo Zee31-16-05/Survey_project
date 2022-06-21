@@ -16,5 +16,5 @@ const QuestionSchema = new mongoose.Schema<QuestionUI>({ // toh QuestionUI ko ad
     options : {type : Array, required: true}
 })
 
-const Question = mongoose.model<QuestionUI>('Question', QuestionSchema)
+const Question =  mongoose.model<QuestionUI>('Question', QuestionSchema)
 export default Question

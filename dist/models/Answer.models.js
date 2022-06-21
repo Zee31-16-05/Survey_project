@@ -11,3 +11,5 @@ const AnswerSchema = new mongoose_1.default.Schema({
     question_id: { type: [String], require: true, ref: 'Question' },
     customer_id: { type: String, require: true, ref: 'Customer' }
 });
+const Answer = mongoose_1.default.model('Answer', AnswerSchema);
+exports.default = Answer;
